@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    
+    <div id='alert' class="alert-box">
+        <p id="title"> 알림창임 </p>
+        <button id="close">닫기</button>
+    </div>
+    <button onClick="inputId()">버튼1</button>
+    <button onClick="inputPwd()">버튼2</button>
+    
+    
+    
+    
+    <script>
+        // 콜백함수 : 파라미터 자리에 들어가는 함수(순차적으로 실행하고 싶을 때)
+        document.getElementById('close').addEventListener('click', function(){
+            document.getElementById('alert').style.display = 'none';
+        });
+       
+        function inputId() {
+            document.getElementById('title').innerHTML = '아이디를 입력하세요';
+            document.getElementById('alert').style.display = 'block';
+        }
+        function inputPwd() {
+            document.getElementById('title').innerHTML = '비밀번호를 입력하세요';
+            document.getElementById('alert').style.display = 'block';
+        }
+        
+    </script>
+
+
+</body>
+</html>

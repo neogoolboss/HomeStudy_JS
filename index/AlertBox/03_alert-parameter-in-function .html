@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    
+    <div id='alert' class="alert-box">
+        <p id="title"> 알림창임 </p>
+        <button onClick="openAlert('none')">닫기</button>
+    </div>
+    <button onClick="openAlert('block', '아이디를 입력하세요')">버튼1</button>
+    <button onClick="openAlert('block', '비밀번호를 입력하세요.')">버튼2</button>
+    
+    
+    
+    
+    <script>
+        // 함수 2개에서 파라미터와 인자를 통해 1개로 축약!    
+        function openAlert(displayText, inputText) {
+            document.getElementById('alert').style.display = displayText;
+            document.getElementById('title').innerHTML = inputText;
+        }
+
+        // function closeAlert() {
+        //     document.getElementById('alert').style.display = none;
+        // }
+        
+
+        
+        
+        
+    </script>
+
+
+</body>
+</html>

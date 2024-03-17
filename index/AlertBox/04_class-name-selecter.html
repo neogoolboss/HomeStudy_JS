@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    
+    <div id='alert' class="alert-box">
+        <p class="title1"> 알림창임 </p>
+        <button class='title1' onClick="openAlert('none')">닫기</button>
+    </div>
+    <button onClick="openAlert('block', '아이디를 입력하세요')">버튼1</button>
+    <button onClick="openAlert('block', '비밀번호를 입력하세요.')">버튼2</button>
+    
+    
+    
+    
+    <script>
+        // id는 중복이 안되지만 클래스는 가능하다. 그래서 [0]인덱스를 통해서 찾으면 편리하다.   
+        function openAlert(displayText, inputText) {
+            document.getElementsByClassName('title1')[0].style.display = displayText;
+            document.getElementById('title').innerHTML = inputText;
+        }
+
+        // function closeAlert() {
+        //     document.getElementById('alert').style.display = none;
+        // }
+        
+
+        
+        
+        
+    </script>
+
+
+</body>
+</html>
