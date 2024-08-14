@@ -13,9 +13,34 @@
     <div class="black-bg">
       <div class="white-bg">
         <h4>로그인하세요</h4>
-        <button class="btn btn-danger" id="close">닫기</button>
+
+        <form action="success.html">
+          <div class="my-3">
+            <input type="text" class="form-control" id="email">
+           </div>
+           <div class="my-3">
+             <input type="password" class="form-control" id="password">
+           </div>
+           <button type="submit" class="btn btn-primary" id = "send">전송</button>
+           <button type="button" class="btn btn-danger" id="close">닫기</button>
+        </form>
+
       </div>
     </div>
+
+    <script>
+      document.getElementById('email').value
+      $('form').on('submit', function(e) {
+        if (document.getElementById('email').value == '') {
+          alert('ID를 입력하세요.');
+          e.preventDefault();
+        } else if (document.getElementById('password').value == '') {
+          alert('Password를 입력하세요');
+          e.preventDefault();
+        }
+      });
+
+    </script>
 
     <nav class="navbar navbar-light bg-light">
         <div class="container-fluid">
@@ -34,23 +59,26 @@
         <li class="list-group-item">And a fifth one</li>
       </ul>
 
-      <p class="hello">안녕</p>
-      <p class="hello">안녕</p>
-      <p class="hello">안녕</p>
-      <button id="test-btn">버튼</button>
-      <button id="login">로그인</button>
+      <!-- <p class="hello">안녕</p> -->
+      <!-- <p class="hello">안녕</p> -->
+      <!-- <p class="hello">안녕</p> -->
+      <!-- <button id="test-btn">버튼</button> -->
+      <div class="main-bg">
+        <h4>Shirts on Sale</h4>
+        <button id="login" class="btn btn-danger">로그인</button>
+      </div>
       
 
     <script>
       
-      document.querySelectorAll('.hello')[0].innerHTML = '바보';
+      // document.querySelectorAll('.hello')[0].innerHTML = '바보';
       // $('.hello').html('바보');
       // $('.hello').css('color', 'red');
 
       // document.querySelector('#test-btn').addEventListener();
-      $('#test-btn').on('click', function(){
-        $('.hello').slideUp();
-      })
+      // $('#test-btn').on('click', function(){
+      //   $('.hello').slideUp();
+      // })
 
       $('#login').on('click', function(){
         $('.black-bg').addClass('show-modal');
