@@ -28,6 +28,22 @@
       </div>
     </div>
 
+    <script>
+      $('.black-bg').on('click', function(e){
+
+        // e.target;             // 유저가 실제로 누른 것
+        // console.log(e.target)
+        // e.currentTarget       // 이벤트 리스너가 달린 곳
+        // this;
+        // console.log(e.currentTarget);
+        // e.preventDefault();   // 이벤트 기본동작 막아 줌
+        // e.stopPropagation();  //상위요소로 이벤트 버블링 막아줌
+        if(e.target == e.currentTarget) {
+          $('.black-bg').removeClass('show-modal');
+        }
+      })
+    </script>
+
 
 
     <script>
