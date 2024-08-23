@@ -47,6 +47,30 @@
           display: block;
         }
       </style>
+
+      <div class="container mt-3">
+        <div class="card p-3">
+          <span class="car-title">상품명</span>
+          <span class="car-price">가격</span>
+        </div>
+      </div>
+
+      <script>
+        var car = '소나타';
+        var carPrice = 50000;
+        var carColor = 'white';
+        // $('.card').html(car + ' / ' + carPrice + ' / ' + carColor )
+
+        var car = ['소나타', 50000, 'white'];
+        car[0] = '아반떼';
+        // $('.card').html(car[0])
+        
+        var car2 = {name : '소나타', price : [50000, 3000, 4000], color : 'white'}
+        $('.car-title').html(car2.name);
+        $('.car-price').html(car2.price[0]);
+
+
+      </script>
       
       <div class="container mt-5">
         <ul class="list">
