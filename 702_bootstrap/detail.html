@@ -71,6 +71,58 @@
 
 
       </script>
+       
+      <br> 
+      <form class="container my5 form-group">
+        <p>상품선택</p>
+        <select class="form-select mt-2">
+          <option>모자</option>
+          <option>셔츠</option>
+          <option>바지</option>
+        </select>
+        <select class="form-select mt-2 form-hide">
+          <option>95</option>
+          <option>100</option>
+        </select>
+        </div>
+      </form>
+
+      <script>
+
+        $('.form-select').eq(0).on('input', function() {
+          let value = $('.form-select').eq(0).val();
+                console.log(value);
+                if(value == '셔츠') {
+                  $('.form-select').eq(1).removeClass('form-hide')
+                  let 셔츠사이즈 = `<option>95</option>
+                    <option>100</option>`;
+                  $('.form-select').eq(1).html(셔츠사이즈);
+                } else if (value == '모자') {
+                  $('.form-select').eq(1).addClass('form-hide');
+                } else if (value == '바지') {
+                  $('.form-select').eq(1).removeClass('form-hide')
+                  let 바지사이즈 = `<option>28</option>
+                    <option>30</option>`;
+                  $('.form-select').eq(1).html(바지사이즈);
+                }
+        })
+        
+      </script>
+
+      <!-- <div id="test"> -->
+        
+      <!-- </div> -->
+      <script>
+        // let a = document.createElement('p'); // 생성법 1
+        // a.innerHTML = '하이';
+        // $('#test').append(a);
+
+        // var 템플릿 = '<p> 하이 </p>'  
+        // document.querySelector('#test').insertAdjacentHTML('beforeend', 템플릿); // 아래추가  생성법2
+        // $('#test').append(템플릿);
+
+      </script>
+
       
       <div class="container mt-5">
         <ul class="list">

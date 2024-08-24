@@ -65,3 +65,8 @@
     font-size: 30px;
     transition: all 1s;
 }
+
+.form-hide {
+    display: none;
+}
+
