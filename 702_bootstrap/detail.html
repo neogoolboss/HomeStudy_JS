@@ -89,23 +89,36 @@
 
       <script>
 
+        var pants = [28, 30, 32, 34];
+        var shirts = [95, 100, 105];
+
         $('.form-select').eq(0).on('input', function() {
           let value = $('.form-select').eq(0).val();
                 console.log(value);
                 if(value == '셔츠') {
                   $('.form-select').eq(1).removeClass('form-hide')
-                  let 셔츠사이즈 = `<option>95</option>
-                    <option>100</option>`;
-                  $('.form-select').eq(1).html(셔츠사이즈);
+                  $('.form-select').eq(1).html('');
+                  shirts.forEach((shirt, i) => {
+                    $('.form-select').eq(1).append(`<option>${shirt}</option>`)
+                  })
                 } else if (value == '모자') {
                   $('.form-select').eq(1).addClass('form-hide');
                 } else if (value == '바지') {
                   $('.form-select').eq(1).removeClass('form-hide')
-                  let 바지사이즈 = `<option>28</option>
-                    <option>30</option>`;
-                  $('.form-select').eq(1).html(바지사이즈);
+                  // let 바지사이즈 = `<option>28</option>
+                  //   <option>30</option>`;
+                  // $('.form-select').eq(1).html(바지사이즈);
+                  $('.form-select').eq(1).html('');
+                  pants.forEach((pant, i) => {
+                    $('.form-select').eq(1).append(`<option>${pant}</option>`)
+                  })
                 }
         })
+
+        var obj = {name : 'kim', age : 20}
+        for(var key in obj) {
+          console.log(obj[key]);
+        }
         
       </script>
 
