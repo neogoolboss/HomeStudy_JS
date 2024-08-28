@@ -26,15 +26,40 @@
     ];
 
     products.forEach((product) => {
-        
         $('.row').eq(0).append(
             `<div class="col-sm-4">
                 <img src="https://via.placeholder.com/600" class="w-100">
                 <h5>${product.title}</h5>
                 <p>가격 : ${product.price}</p>
+                <button class='buy'>구매</button>
             </div>`
         );
     });
+
+    // localStorage.setItem('이름', 'kim');
+    // localStorage.getItem('이름');
+    // localStorage.removeItem('이름');
+    // localStorage.setItem('num', [1,2,3]) // 배열을 강제로 문자로 변환
+    // var arr = [1, 2, 3];
+    // var newArr = JSON.stringify(arr); // 배열로 저장하는 법
+    // localStorage.setItem('num', newArr);
+    // var 꺼내기 = localStorage.getItem('num');
+    // console.log(JSON.parse(꺼내기));    // 그냥 넣으면 문자열로 나옴. 
+    
+    $('.buy').click(function(e) {
+        let cart = $(e.target).siblings('h5').text();
+        console.log(cart);
+        if(localStorage.getItem('cart') != null) {
+            let 꺼낸거 = JSON.parse(localStorage.cart);
+            console.log(꺼낸거);
+            꺼낸거.push(cart);
+            console.log(꺼낸거);
+            localStorage.setItem('cart', JSON.stringify(꺼낸거));
+        } else {
+            localStorage.setItem('cart', JSON.stringify([cart]));
+        }
+
+    })
 
     $('#sort').on('click', function() {
         products.sort(function(a, b) {
@@ -50,6 +75,7 @@
                     <img src="https://via.placeholder.com/600" class="w-100">
                     <h5>${product.title}</h5>
                     <p>가격 : ${product.price}</p>
+                    
                 </div>`
             );
         });
