@@ -180,16 +180,39 @@
   <div style="overflow: hidden;">
     <div class="slide-container">
       <div class="slide-box">
-        <img src="car1.png">
+        <img src="car1.png" draggable="false">
       </div>
       <div class="slide-box">
-        <img src="car2.png">
+        <img src="car2.png" draggable="false">
       </div>
       <div class="slide-box">
-        <img src="car3.png">
+        <img src="car3.png" draggable="false">
       </div>
     </div>
   </div>
+
+  <script>
+
+    var 시작좌표 = 0;
+    var 눌렀냐 = false;      
+
+
+    $('.slide-box').eq(0).on('mousedown', function(e) {
+      시작좌표 = e.clientX
+      눌렀냐 = true;      
+
+    })
+    $('.slide-box').eq(0).on('mousemove', function(e) {
+      console.log(e.clientX - 시작좌표)
+      if(눌렀냐 == true) {
+        $('.slide-container').css('transform', `translateX(${e.clientX - 시작좌표}px)`);
+      }
+    })
+    $('.slide-box').eq(0).on('mouseup', function(e) {
+      눌렀냐 = false;
+    })
+
+  </script>
 
   <button class="prev-btn"> 이전 </button>
   <button class="slide-1">1</button>
