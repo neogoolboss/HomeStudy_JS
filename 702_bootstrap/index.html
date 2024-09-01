@@ -203,13 +203,55 @@
 
     })
     $('.slide-box').eq(0).on('mousemove', function(e) {
-      console.log(e.clientX - 시작좌표)
+      // console.log(e.clientX - 시작좌표)
       if(눌렀냐 == true) {
         $('.slide-container').css('transform', `translateX(${e.clientX - 시작좌표}px)`);
       }
     })
     $('.slide-box').eq(0).on('mouseup', function(e) {
       눌렀냐 = false;
+
+      if(e.clientX - 시작좌표 <= -100) {
+        $('.slide-container')
+        .css('transition', 'all 0.5s')
+        .css('transform', 'translateX(-100vw)');
+      } else {
+        $('.slide-container')
+        .css('transition', 'all 0.5s')
+        .css('transform', 'translateX(0vw)');
+      }
+      setTimeout(()=> {
+        $('.slide-container').css('transition', 'none')
+      })
+    })
+
+    // 모바일에서 작동
+    $('.slide-box').eq(0).on('touchstart', function(e) {
+      시작좌표 = e.touches[0].clientX
+      눌렀냐 = true;      
+
+    })
+    $('.slide-box').eq(0).on('touchmove', function(e) {
+      // console.log(e.clientX - 시작좌표)
+      if(눌렀냐 == true) {
+        $('.slide-container').css('transform', `translateX(${e.touches[0].clientX - 시작좌표}px)`);
+      }
+    })
+    $('.slide-box').eq(0).on('touchend', function(e) {
+      눌렀냐 = false;
+
+      if(e.changedTouches[0].clientX - 시작좌표 <= -100) {
+        $('.slide-container')
+        .css('transition', 'all 0.5s')
+        .css('transform', 'translateX(-100vw)');
+      } else {
+        $('.slide-container')
+        .css('transition', 'all 0.5s')
+        .css('transform', 'translateX(0vw)');
+      }
+      setTimeout(()=> {
+        $('.slide-container').css('transition', 'none')
+      })
     })
 
   </script>
